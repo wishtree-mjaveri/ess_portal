@@ -1,5 +1,8 @@
+@import '~antd/dist/antd.css';
+
 .App {
   text-align: center;
+  overflow: hidden;
 }
 
 .App-logo {
@@ -35,4 +38,296 @@
   to {
     transform: rotate(360deg);
   }
+}
+#components-layout-demo-responsive .logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.site-layout-sub-header-background {
+  background: #fff;
+}
+
+.site-layout-background {
+  background: #fff;
+}
+
+.ant-menu.ant-menu-dark, .ant-menu-dark .ant-menu-sub, .ant-menu.ant-menu-dark .ant-menu-sub {
+  color: black;
+  background:white;
+}
+.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background: white;
+  box-shadow : 0px 0px 10px 5px #d9d9d9;
+  border-radius: 5px;
+}
+.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected span{
+  color:cadetblue !important
+}
+.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected span a{
+  color:cadetblue !important
+}
+
+#div-image{
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+}
+#callout-div-image{
+  
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  height: auto;
+  width: 180px;
+}
+#div-form{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding-right: 40%;
+}
+
+#form{
+  /* overflow-y: hidden; */
+  /* margin-left: 25%; */
+  /* margin-top: 10%; */
+  width: 110%;
+  /* height: min-content; */
+  border-radius: 4%;
+  border-top:cadetblue 2px solid;
+  box-shadow: 0 4px 11px 0 #e4e4e4;
+  /* display: grid; */
+  /* margin-left: auto; */
+}
+#employee-card{
+  border-radius: 12px;
+  margin-bottom: 32px;
+  box-shadow: 0 0 5px 5px rgb(0 0 0 / 3%);
+  background-color: darkgrey;
+}
+
+#table{
+  margin-top: 0;
+ 
+  height: 100% !important;
+ background: white;
+
+  /* overflow-y: scroll !important; */
+}
+
+#table table tr th {
+  color: white;
+  background: cadetblue;
+  position: sticky;
+  top: 0%;
+  z-index: 999;
+}
+
+#table table tr td a{
+  color: cadetblue;
+}
+
+#detailCard{
+  margin: auto;
+}
+
+#emp{
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-content: center;
+  height: 100vh;
+}
+
+#image{
+  
+  width: 70%;
+    padding-left: 27%;
+    margin-bottom: auto;
+}
+.todo-container {
+  background:white;
+  width: 40vw;
+  margin: 10px auto;
+  border-radius: 15px;
+  padding: 20px 10px;
+  color: black;
+ 
+  box-shadow: 0px 0px 10px 5px #d9d9d9;
+}
+
+
+.task {
+ 
+  /* border-radius: 5px; */
+  padding: 0.5em;
+  margin: 0.5em;
+  border-bottom: 2px solid cadetblue;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: grid;
+  grid-template-columns: 90% 5% 5%;
+}
+.task p{
+  margin-bottom: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.task button{
+  background: rgb(12, 124, 251);
+  border-radius: 5px;
+  margin: 0px 5px;
+  padding: 3px 5px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  float: right;
+}
+
+.header {
+  margin: 0.5em;
+  font-size: 1.5em;
+  text-align: center;
+  color: cadetblue;
+}
+
+.create-task input[type=text] {
+  margin: 2.5em 2em;
+  width: 80%;
+  outline: none;
+  border: none;
+  padding: 0.7em;
+  color: black;
+  border-bottom: 2px solid cadetblue;
+}
+#card{
+ 
+    box-shadow:0px 0px 10px 5px #d9d9d9;
+    border-radius: 10px;
+}
+.ant-layout-sider-children{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#logout-div{
+  display: grid;
+  grid-template-rows: 50vh 50vh;
+  height: 100vh;
+}
+#logout-child-div{
+  height: 100%;
+}
+.steps-content {
+  min-height: 200px;
+  margin-top: 16px;
+  padding-top: 80px;
+  text-align: center;
+  background-color: #fafafa;
+  border: 1px dashed #e9e9e9;
+  border-radius: 2px;
+}
+
+.dashboard{
+  background: cadetblue;
+  line-height: 53px
+}
+
+.steps-action {
+  margin-top: 24px;
+}
+.profile-card{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 250px;
+  
+  margin: auto;
+  text-align: left;
+  border-radius: 5px;
+}
+
+.profile-card h3{
+padding-left:10px ;
+}
+.ant-layout-sider {
+  position: relative;
+  min-width: 0;
+  background: white;
+  transition: all 0.2s;
+}
+.ant-menu-dark.ant-menu-inline .ant-menu-item, .ant-menu-dark.ant-menu-inline .ant-menu-submenu-title {
+  width: 90%;
+  margin: 0px auto;
+}
+#last-div{
+  height: 52px;
+    background: cadetblue;
+    margin-top: auto;
+}
+.ant-menu.ant-menu-dark, .ant-menu-dark .ant-menu-sub, .ant-menu.ant-menu-dark .ant-menu-sub {
+  color: black;
+  background: white;
+  padding-top: 15px;
+}
+#employee-details-container{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+}
+
+
+.ant-steps-item-process > .ant-steps-item-container > .ant-steps-item-icon {
+  background: cadetblue;
+}
+.ant-steps-item-finish .ant-steps-item-icon {
+  background-color: #fff;
+  border-color:cadetblue;
+}
+.ant-card-head-title {
+  display: inline-block;
+  flex: 1 1;
+  padding: 16px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: cadetblue;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:cadetblue; 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:cadetblue; 
+}
+
+.clickRowStyl{
+  background-color: cadetblue;
+  
+}
+.ant-table-tbody >.clickRowStyl:hover >td{
+  background-color: #00b4ed;
+  color: white;
 }
