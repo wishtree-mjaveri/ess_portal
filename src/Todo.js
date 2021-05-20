@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import Task from './Task'
 import CreateTask from './CreateTask'
+import {useTranslation} from 'react-i18next'
 function Todo() {
     const [tasks, setTasks] = useState([
         {
@@ -31,10 +32,12 @@ function Todo() {
         // const arr=newTasks.filter(task=>{return task==tas?task:null})
         // console.log(arr)
         setTasks(newTasks);
+
     };
+    const {t}=useTranslation()
     return (
         <div className="todo-container">
-        <div className="header">TODO - ITEMS</div>
+        <div className="header">{t("todo_tasks")} </div>
         <div className="tasks">
             {tasks.map((task, index) => (
                 <Task

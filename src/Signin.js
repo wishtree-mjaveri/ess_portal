@@ -5,10 +5,12 @@ import { Link } from "react-router-dom";
 import GoogleLogin from "./GoogleLogin";
 import image from "./undraw_Team_page_re_cffb (1).svg";
 import logo from './esslogo.png'
+import {useTranslation} from 'react-i18next'
 function Signin(props) {
   const FormItem = Form.Item;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const {t} =useTranslation()
 
   let existuser = localStorage.getItem('existusername')
   // let existuserObj = JSON.parse(existuser)
@@ -68,15 +70,15 @@ props.history.push('/menu/home',{username:userObj.username})
         <Form layout="vertical" style={{padding:'10px'}} name="basic">
           <FormItem
             rules={[
-              { required: true, message: "Please input your E-mail!" },
+              { required: true, message: "Please insert your E-mail!" },
               { type: "email", message: "Enter valid email" },
             ]}
-            label={"Email"}
+            label={t("E-mail")}
             name="email"
           >
             <Input
               prefix={<UserOutlined style={{ color: "rgba(0,0,0,.25)" }} />}
-              placeholder="Email"
+              placeholder={t("E-mail")}
               width="20px"
               value="email"
               onChange={(e) => {
@@ -85,31 +87,31 @@ props.history.push('/menu/home',{username:userObj.username})
             />
           </FormItem>
           <FormItem
-            rules={[{ required: true, message: "Please input your Password!" }]}
-            label={"Password"}
+            rules={[{ required: true, message: "Please insertp your Password!" }]}
+            label={t("Password")}
             name="password"
           >
             <Input
               prefix={<LockOutlined style={{ color: "rgba(0,0,0,.25)" }} />}
               type="password"
               width="20px"
-              placeholder="Password"
+              placeholder={t("Password")}
               value="password"
               onChange={(e) => setPassword(e.target.value)}
             />
           </FormItem>
           <Button type="primary" htmlType="submit" style={{background:"cadetblue",borderColor:"cadetblue"}} onClick={handleSignup}>
-            Sign In
+            {t('Signin')}
           </Button>
         </Form>
         <h3>
-          Or Signin with
+         {t("or_signin_with")}
           <span>
             <GoogleLogin history={props.history}/>
           </span>
         </h3>
         <h4>
-        Don't have a ESSPortal account? <Link to={"/signup"} style={{color:"cadetblue"}} >Sign Up Now</Link>
+       {t("dont_have_a_essportal_account_?")}<Link to={"/signup"} style={{color:"cadetblue"}} >{t("sign_up_now")}</Link>
       </h4>
       </Card>
      

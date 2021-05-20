@@ -3,7 +3,7 @@ import EmployeeDetails from './EmployeeDetails'
 import {employees} from './Employees'
 import {List,Table,Card, message} from 'antd'
 import { Link } from 'react-router-dom'
-
+import {useTranslation} from 'react-i18next'
 function EmployeeDIrectory(props) {
 
 
@@ -29,9 +29,11 @@ function EmployeeDIrectory(props) {
         setEmail(emp[0].email)
         setId(emp[0].id)
     }
+    const {t}=useTranslation()
+    // const columnTitle=t('employee_name')}
     const columns = [
         {
-            title:'Employee Name',
+            title:t('employee_name'),
             dataIndex:'name',
             key:'name',
             sorter: (a, b) => a.name.localeCompare(b.name),

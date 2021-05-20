@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import {useTranslation} from 'react-i18next'
+import LanguageSelect from './LanguageSelect'
 import { Button, Card, Checkbox, Form, Input, Modal, message } from "antd";
 import {
   UserOutlined,
@@ -13,6 +15,7 @@ import Image from "./undraw_Team_page_re_cffb (1).svg";
 import logo from './esslogo.png'
 function Signup(props) {
   const FormItem = Form.Item;
+  const {t} =useTranslation()
 
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -47,7 +50,12 @@ function Signup(props) {
 
   document.title="Signup"
   return (
+    <div  >
+      <div style={{textAlign:"right"}}>
+    <LanguageSelect />
+    </div>
     <div id="emp">
+     
       <div id="div-image">
        <img id='image' src={logo}  />
       <img id="image" src={Image} />
@@ -57,14 +65,14 @@ function Signup(props) {
         <Form name="basic" layout="vertical">
           <FormItem
             rules={[
-              { required: true, message: "Please input your username!" },
+              { required: true, message: "Please insert your username!" },
             ]}
-            label={"Username"}
+            label={t("username")}
             name="username"
           >
             <Input
               prefix={<UserOutlined style={{ color: "rgba(0,0,0,.25)" }} />}
-              placeholder="Username"
+              placeholder={t("username")}
               value="username"
               onChange={(e) => {
                 setUsername(e.target.value);
@@ -73,15 +81,15 @@ function Signup(props) {
           </FormItem>
           <FormItem
             rules={[
-              { required: true, message: "Please input your E-mail!" },
+              { required: true, message: "Please insert your E-mail!" },
               { type: "email", message: "Enter valid email" },
             ]}
-            label={"Email"}
+            label={t("E-mail")}
             name="email"
           >
             <Input
               prefix={<UserOutlined style={{ color: "rgba(0,0,0,.25)" }} />}
-              placeholder="Email"
+              placeholder={t("E-mail")}
               value="email"
               onChange={(e) => {
                 setEmail(e.target.value);
@@ -89,14 +97,14 @@ function Signup(props) {
             />
           </FormItem>
           <FormItem
-            rules={[{ required: true, message: "Please input your Password!" }]}
-            label={"Password"}
+            rules={[{ required: true, message: "Please insert your Password!" }]}
+            label={t("Password")}
             name="password"
           >
             <Input
               prefix={<LockOutlined style={{ color: "rgba(0,0,0,.25)" }} />}
               type="password"
-              placeholder="Password"
+              placeholder={t("Password")}
               value="password"
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -104,7 +112,7 @@ function Signup(props) {
 
           <FormItem
             rules={[
-              { required: true, message: "Please input your Password!" },
+              { required: true, message: "Please insert your confirm Password!" },
               ({ getFieldValue }) => ({
                 validator(_, value) {
                   if (!value || getFieldValue("password") === value) {
@@ -116,7 +124,7 @@ function Signup(props) {
                 },
               }),
             ]}
-            label={"Confirm Password"}
+            label={t("Confirm_Password")}
             name="confirm-password"
             dependencies={["password"]}
             hasFeedback
@@ -124,14 +132,14 @@ function Signup(props) {
             <Input
               prefix={<LockOutlined style={{ color: "rgba(0,0,0,.25)" }} />}
               type="password"
-              placeholder="Confirm Password"
+              placeholder={t("Confirm_Password")}
               value="confirmpassword"
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
           </FormItem>
           <FormItem className="gx-text-center">
             <Button type="primary" htmlType="submit" style={{background:"cadetblue",borderColor:"cadetblue"}} onClick={handleSignup}>
-              Sign Up Now
+            {t("sign_up_now")}
             </Button>
           </FormItem>
         </Form>
@@ -141,9 +149,10 @@ function Signup(props) {
             <GoogleLogin history={props.history}/>
           </div>
         </h3>
-        <h4>Already have an account ?<span><Link to={'/sign-in'} style={{color:"cadetblue"}}>Sign in</Link></span> </h4>
+        <h4>{t('Already_have_an_account_?')} <span><Link to={'/sign-in'} style={{color:"cadetblue"}}>{t("Signin")}</Link></span> </h4>
       </Card>
       </div>
+    </div>
     </div>
   );
 }

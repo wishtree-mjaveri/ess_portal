@@ -1,4 +1,5 @@
 import React from 'react'
+import {useTranslation} from 'react-i18next'
 import {Button, Layout,Menu,Tooltip} from 'antd'
 import {UploadOutlined, UserOutlined, VideoCameraOutlined,UnorderedListOutlined,HomeOutlined} from '@ant-design/icons'
 import {Link, Route, Switch} from "react-router-dom"
@@ -12,6 +13,8 @@ import {AiOutlineLogout} from 'react-icons/ai'
 import PageNotFound from './PageNotFound'
 const {Header, Content, Footer, Sider} =Layout
 function Leftmenu(props) {
+const {t} =useTranslation()
+
   const user = localStorage.getItem('existusername')
     if (user==null) {
         // message.error('Please login')
@@ -43,31 +46,31 @@ function Leftmenu(props) {
       <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
       
         <Menu.Item key="1" icon={<HomeOutlined style={{color:"black"}} />}>
-          <Tooltip title="Home">
+          <Tooltip title= {t("Home")}>
         <Link to={"/menu/home"} style={{color:"black"}} >
-          Home
+          {t("Home")}
           </Link>
           </Tooltip>
         </Menu.Item>
         <Menu.Item key="2" icon={<UnorderedListOutlined  style={{color:"black"}} />}>
-          <Tooltip title="Tasks">
+          <Tooltip title={t("Tasks")}>
             <Link to={"/menu/tasks"} style={{color:"black"}} >
-            Tasks
+            {t("Tasks")}
             </Link>
             </Tooltip>
         </Menu.Item>
         <Menu.Item key="3" icon={<UploadOutlined style={{color:"black"}} />}>
-          <Tooltip title="Document Upload">
+          <Tooltip title={t("Upload_document")}>
           <Link to={'/menu/document-upload'} style={{color:"black"}}>
         
-       Document Upload
+       {t("Upload_document")}
        </Link>
        </Tooltip>
         </Menu.Item>
         <Menu.Item key="4" icon={<UserOutlined style={{color:"black"}} />}>
-          <Tooltip title="People">
+          <Tooltip title={t("People")}>
             <Link to={"/menu/people"} style={{color:"black",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>
-        People
+        {t("People")}
         </Link>
         </Tooltip>
         </Menu.Item>
@@ -82,7 +85,7 @@ function Leftmenu(props) {
      <h1 style={{fontWeight:800,color:'white',fontSize:'50px'}}>ESS Portal</h1>
     
          <Link onClick={handleLogOut} style={{position:"absolute",right:"32px",top:'8px',color:'white'}} >
-         <Tooltip title={"Logout"}>
+         <Tooltip title={t("logout")}>
            <AiOutlineLogout  size={'40px'} style={{padding:'8px'}}/>
          </Tooltip>
          </Link>
@@ -100,7 +103,7 @@ function Leftmenu(props) {
 
         {/* </div> */}
       </Content>
-      <Footer style={{ textAlign: 'right',background:'cadetblue',padding:'15px',color:'white' }}> <img src={logo} style={{height:"20px",width:"20px"}}/> © ESS Portal Pvt.Ltd Contact us Privacy Policy Terms of Service</Footer>
+      <Footer style={{ textAlign: 'right',background:'cadetblue',padding:'15px',color:'white' }}> <img src={logo} style={{height:"20px",width:"20px"}}/> {t("footer")}</Footer>
     </Layout>
   </Layout>
         </>

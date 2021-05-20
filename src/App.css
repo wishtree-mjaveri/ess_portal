@@ -221,7 +221,7 @@
 
 #logout-div{
   display: grid;
-  grid-template-rows: 50vh 50vh;
+  grid-template-rows: 50vh 40vh 10vh;
   height: 100vh;
 }
 #logout-child-div{
@@ -330,4 +330,14 @@ padding-left:10px ;
 .ant-table-tbody >.clickRowStyl:hover >td{
   background-color: #00b4ed;
   color: white;
+}
+
+.language-select {
+  float: right;
+  margin-top: -35px;
+}
+
+.ant-card-body {
+  padding: 24px;
+  display: grid;
 }

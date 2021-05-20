@@ -1,0 +1,24 @@
+{
+    "select_language": "Choisir la langue",
+    "Already_have_an_account_?":"Vous avez déjà un compte ?",
+    "Home":"Domicile",
+    "Tasks":"Tâches",
+    "People":"Gens",
+    "Upload_document":"télécharger le document",
+    "employee_name":"Nom de l'employé",
+    "todo_tasks":"Faire des tâches",
+    "add_a_new_task":"Ajouter une nouvelle tâche",
+    "username":"Nom d'utilisateur",
+    "Password":"Mot de passe",
+    "Confirm_Password":"Confirmez le mot de passe",
+    "E-mail":"E-mail",
+    "Signin":"S'identifier",
+    "or_signin_with":"ou connectez-vous avec",
+    "dont_have_a_essportal_account_?":"Vous n'avez pas de compte ESSPortal ?",
+    "sign_up_now":"S'inscrire maintenant",
+    "Logout_Successful":"Déconnexion réussie",
+"Go_back_to_Signin":"Revenir à",
+"logout":"Se déconnecter",
+"footer":"© ESS Portal Pvt.Ltd Contactez-nous Politique de confidentialité Conditions d'utilisation"
+
+}

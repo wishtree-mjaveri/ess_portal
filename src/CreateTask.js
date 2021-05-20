@@ -1,8 +1,9 @@
 import React,{useState} from 'react'
+import {useTranslation} from 'react-i18next'
 
 function CreateTask({addTask}) {
     const [value, setValue] = useState("");
-    
+    const {t} = useTranslation()
     const handleSubmit = e => {
         e.preventDefault();
         if (!value) return;
@@ -16,7 +17,7 @@ function CreateTask({addTask}) {
             type="text"
             className="input"
             value={value}
-            placeholder="Add a new task"
+            placeholder={t("add_a_new_task")}
             onChange={e => setValue(e.target.value)}
         />
     </form>

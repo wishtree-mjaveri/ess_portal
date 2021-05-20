@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import {Button, Upload,Card,Steps,message,Input} from 'antd'
 import validator,{isValidNumber,isValidVID} from 'aadhaar-validator'
+import {useTranslation} from 'react-i18next'
 // import {Upload} from '@progress/kendo-react-upload'
 function DocumentUploads(props) {
   const user = localStorage.getItem('existusername')
@@ -176,12 +177,14 @@ if (user==null) {
         setDisable(true)
       }
 
+      const {t} =useTranslation()
+
       document.title="Document upload"
 
     return (
         
         <div>
-            <Card id={"card"} title={"Document Upload"}>
+            <Card id={"card"} title={t("Upload_document")}>
                 <h2>
                     Upload Aadhar card,Pancard,last month's bank statement for employee verification.
                 </h2>
