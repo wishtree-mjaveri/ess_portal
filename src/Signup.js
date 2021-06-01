@@ -33,12 +33,16 @@ function Signup(props) {
         const data = {
           username: username,
           email: email,
+          currentAddress:"31st, Manthan, Sharda Nagar, Rajapeth, Amravati, Maharashtra",
+          permanentAddress:"31st, Manthan, Sharda Nagar, Rajapeth, Amravati, Maharashtra",
+          phoneno:"7456774567"
         };
+       localStorage.setItem('user',JSON.stringify(data))
+
         setEmail('')
         setPassword('')
         setUsername('')
         setConfirmPassword('')
-        localStorage.setItem('user',JSON.stringify(data))
         message.success('Account created.')
        props.history.push('/sign-in')
         console.log(data);
@@ -59,6 +63,10 @@ function Signup(props) {
       <div id="div-image">
        <img id='image' src={logo}  />
       <img id="image" src={Image} />
+      </div>
+      <div id="responsive-div">
+        <img id="responsive-logo"src={logo}/>
+        <span>ESS Portal</span>
       </div>
       <div id="div-form">
       <Card id="form">

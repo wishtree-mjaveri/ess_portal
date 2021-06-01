@@ -29,18 +29,27 @@ function Signin(props) {
   const handleSignup = () => {
     if (email.length==0||password.length==0) {
       return null
-    } else {
+    }  
+    if (email=='admin@demo.com'&&password=="admin") {
+      props.history.push('/admin/menu/employees')
+    }
+    
+    else {
+
       let user=localStorage.getItem('user')
       
       let userObj=JSON.parse(user)
+      console.log(userObj)
       // if (userObj==null) {
       //   message.error('No user exist with this email.Please create account.')
       // }
-      if (userObj) {
+     
+      if (userObj.email.length>0) {
       console.log(userObj.username)
 props.history.push('/menu/home',{username:userObj.username})
         // props.history.push('/menu',{username:userObj.username})
-      } else {
+      }  
+       else{
         message.error('No user exist with this email.Please create account.')
       }
       console.log(email);
@@ -64,6 +73,11 @@ props.history.push('/menu/home',{username:userObj.username})
       <div id={"div-image"}>
         <img id="image" style={{marginBottom:"20px"}} src={logo}  />
       <img id="image" src={image} />
+      
+      </div>
+      <div id="responsive-div">
+        <img id="responsive-logo"src={logo}/>
+        <span>ESS Portal</span>
       </div>
       <div id={"div-form"}>
       <Card id="form">

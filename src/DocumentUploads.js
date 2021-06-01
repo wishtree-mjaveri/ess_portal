@@ -15,6 +15,7 @@ if (user==null) {
     const [pan, setPan] = useState('')
     const [loading, setLoading] = useState(false)
     const [img, setImg] = useState('')
+    const [wrongImage, setWrongImage] = useState(false)
     const { Step } = Steps;
     const verifyAadhar=(number)=>{
     //   console.log("before verify aadhar ",current)
@@ -48,11 +49,15 @@ if (user==null) {
       const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
       if (!isJpgOrPng) {
         message.error('You can only upload JPG/PNG file!');
+        setWrongImage(true)
+        setDisable(true)
         return false
       }
       const isLt2M = file.size / 1024 / 1024 < 2;
       if (!isLt2M) {
         message.error('Image must smaller than 2MB!');
+        setWrongImage(true)
+       
         return false
       }
       return true;
@@ -64,7 +69,7 @@ if (user==null) {
       reader.readAsDataURL(img);
      setCurrent(current+1)
     }
-    const dummyRequest = ({ file, onSuccess }) => {
+    const dummyRequest = ({ file, onSuccess  }) => {
       setTimeout(() => {
         onSuccess("ok");
       }, 0);
@@ -86,7 +91,11 @@ if (user==null) {
         );
       }
     };
-
+    const {t} =useTranslation()
+    const handleRemove=()=>{
+      setCurrent(current-1)
+      setWrongImage(false)
+    }
     const steps = [
         {
           title: 'Aadhar card',
@@ -100,8 +109,11 @@ if (user==null) {
             beforeUpload={beforeUpload}
           onChange={handleChange}
           customRequest={dummyRequest}
+          onRemove={()=>{setWrongImage(false)}}
+          // disabled={wrongImage}
+          
             >
-              <Button >Upload aadhar card</Button>
+             {wrongImage?<h3 >{t("remove_msg")}</h3>:<Button >Upload aadhar card</Button>} 
             </Upload> 
         </div>,
         },
@@ -117,8 +129,12 @@ if (user==null) {
             beforeUpload={beforeUpload}
           onChange={handleChange}
           customRequest={dummyRequest}
+          onRemove={()=>{setWrongImage(false)}}
+
             >
-              <Button >Upload pan card</Button>
+              {/* <Button >Upload pan card</Button> */}
+             {wrongImage?<h3 >{t("remove_msg")}</h3>:<Button >Upload pan card</Button>} 
+
             </Upload> 
           </div>,
         },
@@ -132,8 +148,12 @@ if (user==null) {
             beforeUpload={beforeUpload}
           onChange={handleChange}
           customRequest={dummyRequest}
+          onRemove={()=>{setWrongImage(false)}}
+
             >
-              <Button >Upload bank statement</Button>
+              {/* <Button >Upload bank statement</Button> */}
+             {wrongImage?<h3 >{t("remove_msg")}</h3>:<Button >Upload bank statement</Button>} 
+
             </Upload> 
         
              {/* <Upload
@@ -177,16 +197,16 @@ if (user==null) {
         setDisable(true)
       }
 
-      const {t} =useTranslation()
+      
 
       document.title="Document upload"
 
     return (
         
         <div>
-            <Card id={"card"} title={t("Upload_document")}>
+            <Card id={"card"} title={t("Upload_document")} style={{overflow:"auto"}}>
                 <h2>
-                    Upload Aadhar card,Pancard,last month's bank statement for employee verification.
+                    {t("document_intro")}
                 </h2>
                 <Steps current={current}>
         {steps.map(item => (

@@ -19,6 +19,14 @@
     "Logout_Successful":"Déconnexion réussie",
 "Go_back_to_Signin":"Revenir à",
 "logout":"Se déconnecter",
-"footer":"© ESS Portal Pvt.Ltd Contactez-nous Politique de confidentialité Conditions d'utilisation"
+"footer":"© ESS Portal Pvt.Ltd Contactez-nous Politique de confidentialité Conditions d'utilisation",
+"hello":"Bonjour",
+"welcome_msg":"Bienvenue sur le portail libre-service des employés",
+"introduction":"Le libre-service des employés (ESS) est une technologie qui permet aux employés de gérer seuls de nombreux besoins en matière de ressources humaines (RH), de technologie de l'information (TI) et d'autres besoins administratifs. Souvent mis à disposition via un portail Web ou un portail interne, ESS facilite généralement les tâches courantes, notamment la mise à jour des informations personnelles, l'accès aux manuels des employés et l'enregistrement des vacances et des jours personnels. De plus en plus, les portails libre-service des employés permettent également aux particuliers de gérer leurs régimes d'assurance et autres avantages.",
+"task_card":"L'employé peut marquer les tâches comme terminées déjà assignées ou ajoutées par lui / elle et supprimer une tâche également.",
+"emp_card":"L'employé peut télécharger des documents.",
+"people_card":"L'employé peut trouver d'autres détails sur l'employé.",
+"document_intro":"Téléchargez la carte Aadhar, Pancard, le relevé bancaire du mois dernier pour la vérification des employés.",
+"remove_msg":"Supprimer la dernière image insérée."
 
 }

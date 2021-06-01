@@ -18,6 +18,7 @@ import logo from "./esslogo.png";
 import { AiOutlineLogout } from "react-icons/ai";
 import PageNotFound from "./PageNotFound";
 import {
+  faChartBar,
   faEdit,
   faFileUpload,
   faHome,
@@ -31,15 +32,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import EmployeeInfo from "./EmployeeInfo";
 import EditEmployee from "./EditEmployee";
 import EmployeeTable from "./EmployeeTable";
+import Dashboard from "./Dashboard";
 const { Header, Content, Footer, Sider } = Layout;
-function Leftmenu(props) {
+function AdminLeftMenu(props) {
   const { t } = useTranslation();
 
-  const user = localStorage.getItem("existusername");
-  if (user == null) {
-    // message.error('Please login')
-    props.history.push("/sign-in");
-  }
+//   const user = localStorage.getItem("existusername");
+//   if (user == null) {
+//     // message.error('Please login')
+//     props.history.push("/sign-in");
+//   }
   const handleLogOut = () => {
     localStorage.removeItem("user");
     localStorage.removeItem("existusername");
@@ -66,19 +68,19 @@ function Leftmenu(props) {
             {/* <h2 style={{color:'white'}}>Dashboard</h2> */}
           </div>
           <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
-            <Menu.SubMenu
+            {/* <Menu.SubMenu
             key="submenu1"
             icon={<FontAwesomeIcon icon={faUserAlt} style={{color:"black"}} />}
-            title={"    Employee"}
+            title={"EMployee"}
             >
-         
+          
             <Menu.Item
               key="5"
               icon={
                 <FontAwesomeIcon icon={faUser} style={{ color: "black" }} />
               }
             >
-              <Tooltip title={t("Employee-info")}>
+              <Tooltip title={t("People")}>
                 <Link
                   to={"/menu/employee-info"}
                   style={{
@@ -98,7 +100,7 @@ function Leftmenu(props) {
                 <FontAwesomeIcon icon={faUserEdit} style={{ color: "black" }} />
               }
             >
-              <Tooltip title={t("Employee-edit")}>
+              <Tooltip title={t("People")}>
                 <Link
                   to={"/menu/employee-edit"}
                   style={{
@@ -133,7 +135,7 @@ function Leftmenu(props) {
               }
             >
               {/* <Menu.Item key="2" icon={<UnorderedListOutlined  style={{color:"black"}} />}> */}
-              <Tooltip title={t("Tasks")}>
+              {/* <Tooltip title={t("Tasks")}>
                 <Link to={"/menu/tasks"} style={{ color: "black" }}>
                   {t("Tasks")}
                 </Link>
@@ -153,8 +155,8 @@ function Leftmenu(props) {
                   {t("Upload_document")}
                 </Link>
               </Tooltip>
-            </Menu.Item>
-            <Menu.Item
+            </Menu.Item> */} 
+            {/* <Menu.Item
               key="4"
               icon={
                 <FontAwesomeIcon icon={faUsers} style={{ color: "black" }} />
@@ -173,20 +175,33 @@ function Leftmenu(props) {
                   {t("People")}
                 </Link>
               </Tooltip>
-            </Menu.Item>
-            {/* <Menu.Item
+            </Menu.Item> */}
+            <Menu.Item
               key="2"
               icon={
                 <FontAwesomeIcon icon={faTasks} style={{ color: "black" }} />
               }
-            > */}
+            >
               {/* <Menu.Item key="2" icon={<UnorderedListOutlined  style={{color:"black"}} />}> */}
-              {/* <Tooltip title={"Employees"}>
-                <Link to={"/menu/employees"} style={{ color: "black" }}>
+              <Tooltip title={"Employees"}>
+                <Link to={"/admin/menu/employees"} style={{ color: "black" }}>
                   Employees
                 </Link>
               </Tooltip>
-            </Menu.Item> */}
+            </Menu.Item>
+            <Menu.Item
+              key="22"
+              icon={
+                <FontAwesomeIcon icon={faChartBar} style={{ color: "black" }} />
+              }
+            >
+              {/* <Menu.Item key="2" icon={<UnorderedListOutlined  style={{color:"black"}} />}> */}
+              <Tooltip title={"Dashboard"}>
+                <Link to={"/admin/menu/dashboard"} style={{ color: "black" }}>
+                 Dashboard
+                </Link>
+              </Tooltip>
+            </Menu.Item>
             {/* <Menu.Item
               key="5"
               icon={
@@ -238,9 +253,14 @@ function Leftmenu(props) {
                 position: "relative",
                 background: "cadetblue",
                 color: "white",
+                overflow:"hidden",
+                textOverflow:"ellipsis",
+                whiteSpace:"nowrap"
               }}
             >
-              <h1 style={{ fontWeight: 500, color: "white", fontSize: "50px" ,overflow:"hidden",whiteSpace:"nowrap",textOverflow:"ellipsis"}}>
+              <h1 style={{ fontWeight: 500, color: "white", fontSize: "50px" ,  overflow:"hidden",
+                textOverflow:"ellipsis",
+                whiteSpace:"nowrap"}}>
                 ESS Portal
               </h1>
 
@@ -264,7 +284,7 @@ function Leftmenu(props) {
           >
             {/* <div className="site-layout-background" style={{ padding: 24 ,minHeight:"100%"}}> */}
             <Switch>
-              <Route path={"/menu/home"} component={Home} />
+              {/* <Route path={"/menu/home"} component={Home} />
               <Route path={"/menu/tasks"} component={Tasks} />
               <Route path={"/menu/people"} component={EmployeeDIrectory} />
               <Route
@@ -272,8 +292,9 @@ function Leftmenu(props) {
                 component={DocumentUploads}
               />
               <Route path={"/menu/employee-info"} component={EmployeeInfo} />
-              <Route path={'/menu/employee-edit'} component={EditEmployee}/>
-              <Route path={"/menu/employees"} component={EmployeeTable} />
+              <Route path={'/menu/employee-edit'} component={EditEmployee}/> */}
+              <Route path={"/admin/menu/employees"} component={EmployeeTable} />
+              <Route path={"/admin/menu/dashboard"} component={Dashboard} />
               <Route component={PageNotFound} />
             </Switch>
 
@@ -285,11 +306,14 @@ function Leftmenu(props) {
               background: "cadetblue",
               padding: "15px",
               color: "white",
-              textOverflow:"ellipsis",overflow:"hidden",whiteSpace:"nowrap" 
+              whiteSpace:"nowrap",
+              overflow:"hidden",
+              textOverflow:"ellipsis"
+
             }}
           >
             {" "}
-            <img src={logo} style={{ height: "20px", width: "20px"}} />{" "}
+            <img src={logo} style={{ height: "20px", width: "20px" }} />{" "}
             {t("footer")}
           </Footer>
         </Layout>
@@ -298,4 +322,4 @@ function Leftmenu(props) {
   );
 }
 
-export default Leftmenu;
+export default AdminLeftMenu;

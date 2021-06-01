@@ -19,6 +19,19 @@
     "Logout_Successful":"Logout Successful",
     "Go_back_to_Signin":"Go back to",
     "logout":"Logout",
-    "footer":"© ESS Portal Pvt.Ltd Contact us Privacy Policy Terms of Service"
+    "footer":"© ESS Portal Pvt.Ltd Contact us Privacy Policy Terms of Service",
+    "hello":"Hello",
+    "welcome_msg":"Welcome to the Employee Self Service Portal",
+    "introduction":"Employee self-service (ESS) is technology that lets employees handle many human resources (HR), information technology (IT), and other administrative needs on their own. Often made available through a web portal or internal portal, ESS usually facilitates common tasks, including updating personal information, accessing employee handbooks, and logging vacation and personal days. Increasingly, employee self-service portals also allow individuals to manage their insurance plans and other benefits",
+    "task_card":"Employee can mark tasks as completed already assigned or  added by him/her and delete task as well.",
+    "emp_card":"Employee can upload documents.",
+    "people_card":"Employee can find other employee details.",
+    "document_intro":"Upload Aadhar card,Pancard,last month's bank statement for employee verification.",
+    "remove_msg":"Remove last inserted image."
+
+
+
+
+
 
 }

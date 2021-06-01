@@ -1,17 +1,33 @@
+import { jssPreset } from '@material-ui/styles'
 import React,{useState} from 'react'
 
 import GoogleLoginn  from 'react-google-login'
 function GoogleLogin(props) {
 const [username, setusername] = useState('')
+
+
+
+
 const responseGoogle = (response) => {
    console.log(response.profileObj)
     
     setusername(""+response.profileObj.givenName+" "+response.profileObj.familyName)
-   
+    const data = {
+        username: username,
+       
+        currentAddress:"31st, Manthan, Sharda Nagar, Rajapeth, Amravati, Maharashtra",
+        permanentAddress:"31st, Manthan, Sharda Nagar, Rajapeth, Amravati, Maharashtra",
+        phoneno:"7456774567"
+      }
+      localStorage.setItem('user',JSON.stringify(data))
   }
+
+ 
   const failureResponse=(response)=>{
       console.log(response)
   }
+
+
 
   if (username.length>0) {
     props.history.push('/menu/home',{username:username})
