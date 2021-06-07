@@ -1,6 +1,12 @@
 import React, { useState } from "react";
-import { Button, Card, Input, Form, message, Upload } from "antd";
-import image from "./employeeThumbnail.png";
+// import { Button, Card, Input, Form, message, Upload } from "antd";
+import Button from 'antd/es/button/button'
+import Card from 'antd/es/card/index'
+import Input from 'antd/es/input/index'
+import Form from 'antd/es/form/index'
+import message from 'antd/es/message/index'
+import Upload from 'antd/es/upload/index'
+// import image from "./employeeThumbnail.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera, faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 import joi from 'joi'

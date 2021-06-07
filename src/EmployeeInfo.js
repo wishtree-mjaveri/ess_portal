@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card}  from 'antd'
+import Card  from 'antd/es/card/index'
 import image from './employeeThumbnail.png'
 function EmployeeInfo() {
     let employeeinfo = localStorage.getItem('user')

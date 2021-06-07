@@ -1,7 +1,14 @@
 import React,{useState} from 'react'
-import {Button, Upload,Card,Steps,message,Input} from 'antd'
-import validator,{isValidNumber,isValidVID} from 'aadhaar-validator'
-import {useTranslation} from 'react-i18next'
+// import {Button, Upload,Card,Steps,message,Input} from 'antd'
+import Button from 'antd/es/button/button'
+import Upload from 'antd/es/upload/Upload'
+import Card from 'antd/es/card/index'
+import Steps from 'antd/es/steps/index'
+import message from 'antd/es/message/index'
+
+
+// import validator,{isValidNumber,isValidVID} from 'aadhaar-validator'
+import {useTranslation} from 'react-i18next/dist/es/useTranslation'
 // import {Upload} from '@progress/kendo-react-upload'
 function DocumentUploads(props) {
   const user = localStorage.getItem('existusername')

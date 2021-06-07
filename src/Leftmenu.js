@@ -1,36 +1,53 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
-import { Button, Layout, Menu, Tooltip } from "antd";
-import {
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-  UnorderedListOutlined,
-  HomeOutlined,
-} from "@ant-design/icons";
+import  {useTranslation}  from "react-i18next/dist/es/useTranslation";
+
+import Layout from 'antd/es/layout/index'
+import Menu from 'antd/es/menu/index'
+import Tooltip from 'antd/es/tooltip/index'
 import { Link, Route, Switch } from "react-router-dom";
-import Home from "./Home";
-import Tasks from "./Tasks";
-import EmployeeDIrectory from "./EmployeeDIrectory";
-import DocumentUploads from "./DocumentUploads";
-import Logout from "./Logout";
 import logo from "./esslogo.png";
-import { AiOutlineLogout } from "react-icons/ai";
-import PageNotFound from "./PageNotFound";
+
 import {
-  faEdit,
+ 
   faFileUpload,
   faHome,
   faTasks,
-  faUser,
+ 
   faUserAlt,
   faUserEdit,
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import Home from "./Home";
+import Tasks from "./Tasks";
+import EmployeeDIrectory from "./EmployeeDIrectory";
+import DocumentUploads from "./DocumentUploads";
+
+
+import PageNotFound from "./PageNotFound";
+
 import EmployeeInfo from "./EmployeeInfo";
+
 import EditEmployee from "./EditEmployee";
+
 import EmployeeTable from "./EmployeeTable";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import  {AiOutlineLogout}  from "@react-icons/all-files/ai/AiOutlineLogout";
+
+const LazyEmployeeTable = React.lazy(()=>import('./EmployeeTable'))
+const LazyHome = React.lazy(()=>import('./Home'))
+const LazyTasks = React.lazy(()=>import('./Tasks'))
+const LazyEmployeeDirectory = React.lazy(()=>import('./EmployeeDIrectory'))
+const LazyDocumentUploads = React.lazy(()=>import('./DocumentUploads'))
+const LazyPageNotFound = React.lazy(()=>import('./PageNotFound'))
+const LazyEmployeeInfo = React.lazy(()=>import('./EmployeeInfo'))
+const LazyEditEmployee = React.lazy(()=>import('./EditEmployee'))
+
+
+// import Logout from "./Logout";
+
+
 const { Header, Content, Footer, Sider } = Layout;
 function Leftmenu(props) {
   const { t } = useTranslation();
@@ -68,11 +85,12 @@ function Leftmenu(props) {
           <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
             <Menu.SubMenu
             key="submenu1"
-            icon={<FontAwesomeIcon icon={faUserAlt} style={{color:"black"}} />}
+            icon={<FontAwesomeIcon icon={faUserAlt} />}
             title={"    Employee"}
+            style={{ color:"black", fontSize:"16px"}}
             >
          
-            <Menu.Item
+            {/* <Menu.Item
               key="5"
               icon={
                 <FontAwesomeIcon icon={faUser} style={{ color: "black" }} />
@@ -91,7 +109,7 @@ function Leftmenu(props) {
                   Employee-Info
                 </Link>
               </Tooltip>
-            </Menu.Item>
+            </Menu.Item> */}
             <Menu.Item
               key="6"
               icon={
@@ -106,6 +124,7 @@ function Leftmenu(props) {
                     overflow: "hidden",
                     textOverflow: "ellipsis",
                     whiteSpace: "nowrap",
+               fontSize:"16px"
                   }}
                 >
                   Employee-edit
@@ -121,7 +140,7 @@ function Leftmenu(props) {
               }
             >
               <Tooltip title={t("Home")}>
-                <Link to={"/menu/home"} style={{ color: "black" }}>
+                <Link to={"/menu/home"} style={{ color: "black"   ,fontSize:"16px"}}>
                   {t("Home")}
                 </Link>
               </Tooltip>
@@ -134,7 +153,7 @@ function Leftmenu(props) {
             >
               {/* <Menu.Item key="2" icon={<UnorderedListOutlined  style={{color:"black"}} />}> */}
               <Tooltip title={t("Tasks")}>
-                <Link to={"/menu/tasks"} style={{ color: "black" }}>
+                <Link to={"/menu/tasks"} style={{ color: "black",  fontSize:"16px" }}>
                   {t("Tasks")}
                 </Link>
               </Tooltip>
@@ -149,7 +168,7 @@ function Leftmenu(props) {
               }
             >
               <Tooltip title={t("Upload_document")}>
-                <Link to={"/menu/document-upload"} style={{ color: "black" }}>
+                <Link to={"/menu/document-upload"} style={{ color: "black",  fontSize:"16px" }}>
                   {t("Upload_document")}
                 </Link>
               </Tooltip>
@@ -168,6 +187,7 @@ function Leftmenu(props) {
                     overflow: "hidden",
                     textOverflow: "ellipsis",
                     whiteSpace: "nowrap",
+                   fontSize:"16px"
                   }}
                 >
                   {t("People")}
@@ -240,7 +260,7 @@ function Leftmenu(props) {
                 color: "white",
               }}
             >
-              <h1 style={{ fontWeight: 500, color: "white", fontSize: "50px" ,overflow:"hidden",whiteSpace:"nowrap",textOverflow:"ellipsis"}}>
+              <h1 style={{ color: "white", fontSize: "40px" ,overflow:"hidden",whiteSpace:"nowrap",textOverflow:"ellipsis"}}>
                 ESS Portal
               </h1>
 
@@ -263,20 +283,21 @@ function Leftmenu(props) {
             style={{ margin: "24px 16px 0", height: "100%", overflowY: "auto" }}
           >
             {/* <div className="site-layout-background" style={{ padding: 24 ,minHeight:"100%"}}> */}
+            <React.Suspense fallback={"loading..."} >
             <Switch>
-              <Route path={"/menu/home"} component={Home} />
-              <Route path={"/menu/tasks"} component={Tasks} />
-              <Route path={"/menu/people"} component={EmployeeDIrectory} />
+              <Route path={"/menu/home"} component={LazyHome} />
+              <Route path={"/menu/tasks"} component={LazyTasks} />
+              <Route path={"/menu/people"} component={LazyEmployeeDirectory} />
               <Route
                 path={"/menu/document-upload"}
-                component={DocumentUploads}
+                component={LazyDocumentUploads}
               />
-              <Route path={"/menu/employee-info"} component={EmployeeInfo} />
-              <Route path={'/menu/employee-edit'} component={EditEmployee}/>
-              <Route path={"/menu/employees"} component={EmployeeTable} />
-              <Route component={PageNotFound} />
+              <Route path={"/menu/employee-info"} component={LazyEmployeeInfo} />
+              <Route path={'/menu/employee-edit'} component={LazyEditEmployee}/>
+              <Route path={"/menu/employees"} component={LazyEmployeeTable} />
+              <Route component={LazyPageNotFound} />
             </Switch>
-
+            </React.Suspense>
             {/* </div> */}
           </Content>
           <Footer

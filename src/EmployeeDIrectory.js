@@ -1,13 +1,15 @@
 import React,{useState} from 'react'
 import EmployeeDetails from './EmployeeDetails'
 import {employees} from './Employees'
-import {List,Table,Card, message} from 'antd'
+import Table from 'antd/es/table/index'
 import { Link } from 'react-router-dom'
-import {useTranslation} from 'react-i18next'
+import {useTranslation} from 'react-i18next/dist/es/useTranslation'
 function EmployeeDIrectory(props) {
 
 
-
+   let localemp= localStorage.getItem('employees')
+   let localemployees=JSON.parse(localemp)
+    console.log(JSON.parse(localemp))
    const user = localStorage.getItem('existusername')
     if (user==null) {
         // message.error('Please login')
@@ -85,7 +87,7 @@ const onClickRow = (record) => {
         <div id="employee-details-container" >
            <div style={{height:'400px',overflowY:'scroll',width:'60%' ,marginLeft:'auto',marginRight:'auto',marginBottom:'auto',marginTop:'auto'}}>
              {/* <Table id={"table"} onRow={onClickRow} rowClassName={e=>setclassname(e.name)} dataSource={employees}  columns={columns} pagination={false} onChange={handleChange}/> */}
-             <Table  rowSelection={{...rowSelection,type:'radio'}}  dataSource={employees}  columns={columns} id={"table"} pagination={false} onChange={handleChange}/>
+             <Table  rowSelection={{...rowSelection,type:'radio'}}  dataSource={localemployees}  columns={columns} id={"table"} pagination={false} onChange={handleChange}/>
             
              </div>
           

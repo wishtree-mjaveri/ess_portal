@@ -1,13 +1,17 @@
 import React,{useState} from 'react'
-import {Card,message,Row,Col} from 'antd'
-import {UploadOutlined,TeamOutlined,BarsOutlined} from '@ant-design/icons'
-import addFile from './addFiles.svg'
-import people from './people.svg'
-import task from './completedTask.svg'
+// import {Card,Row,Col} from 'antd/es/card'
+import Row from 'antd/es/row/index'
+import Col from 'antd/es/col/index'
+import Card from 'antd/es/card/index'
+import UploadOutlined from '@ant-design/icons/UploadOutlined'
+import TeamOutlined from '@ant-design/icons/TeamOutlined'
+import BarsOutlined from '@ant-design/icons/BarsOutlined'
+
+
 import taskComplete from './undraw_completed_tasks_vs6q (1).svg'
 import file from './undraw_Add_files_re_v09g (1).svg'
 import People from './undraw_people_search_wctu (1).svg'
-import {useTranslation} from 'react-i18next'
+import {useTranslation} from 'react-i18next/dist/es/useTranslation'
 function Home(props) {
    
 // let user=localStorage.getItem('existusername')

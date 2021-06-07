@@ -418,6 +418,71 @@ textarea.ant-input {
 }
 
 
+
+.add-emp-btn{
+  color:cadetblue;
+ align-items: center;
+  background-color: white;
+  display: grid;
+  margin: auto;
+}
+.add-emp-btn:hover{
+  background-color:cadetblue;
+  color:white;
+}
+#table .ant-table-tbody > tr.ant-table-row-selected > td {
+background-color: white;
+}
+
+.ant-modal-header {
+  padding: 16px 24px;
+  text-align: center;
+  color: cadetblue;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  border-radius: 2px 2px 0 0;
+}
+.ant-form-item-label {
+  display: inline-block;
+  flex-grow: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 30%;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.ant-model-footer +.ant-btn .ant-btn-primary{
+  color:cadetblue;
+
+  background-color: white;
+ 
+}
+.ant-modal-footer .ant-btn + .ant-btn:not(.ant-dropdown-trigger) {
+  margin-bottom: 0;
+  margin-left: 8px;
+  background-color: white;
+  color: cadetblue;
+  border-color: cadetblue;
+}
+#table table tr th {
+  color: black;
+  background: lightgray;
+  position: sticky;
+  top: 0%;
+  /* z-index: 999; */
+}
+/* .ant-btn-primary {
+  color: #fff;
+  background: #1890ff;
+  border-color: #1890ff;
+  text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
+  box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
+} */
+/* .ant-btn ,ant-btn-primary :hover{
+  color: cadetblue;
+  background-color: cadetblue;
+} */
 @media only screen and (max-width: 400px) {
   /* For tablets: */
   #div-image{

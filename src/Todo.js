@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import Task from './Task'
 import CreateTask from './CreateTask'
-import {useTranslation} from 'react-i18next'
+import {useTranslation} from 'react-i18next/dist/es/useTranslation'
 function Todo() {
     const [tasks, setTasks] = useState([
         {

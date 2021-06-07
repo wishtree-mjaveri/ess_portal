@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import Paper from '@material-ui/core/Paper';
+import Paper from '@material-ui/core/Paper/Paper';
 import {
   Chart,
   BarSeries,
@@ -8,9 +8,12 @@ import {
   ValueAxis,
 } from '@devexpress/dx-react-chart-material-ui';
 
-import {Card, Col, Row} from "antd"
+// import {Card, Col, Row} from "antd"
+import Card from 'antd/lib/card/index'
+import Col from 'antd/lib/col/index'
+import Row from 'antd/lib/row/index'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-import {} from '@fortawesome/fontawesome-svg-core'
+
 
 import { Animation } from '@devexpress/dx-react-chart';
 import { faDesktop, faLongArrowAltUp, faMouse } from '@fortawesome/free-solid-svg-icons';
@@ -36,30 +39,30 @@ function Dashboard() {
         <div>
             
             <div >
-       <Row gutter={{ xs: 4, sm: 8, md: 16, lg: 32 }}>
+       <Row >
          <Col flex={'25%'}>
-        <Card className="col-12" style={{borderRadius:"23px",backgroundImage:"radial-gradient(white -71px, darkorange)"}}>
-        <FontAwesomeIcon icon={faMouse} style={{margin:'auto',width:"36px",height:"auto"}}/>
+        <Card className="col-12" style={{borderRadius:"23px",backgroundColor:"white",boxShadow:"0 4px 11px 0 #e4e4e4"}}>
+        <FontAwesomeIcon icon={faMouse} style={{color:"cadetblue",margin:'auto',width:"36px",height:"auto"}}/>
         <h2>2000 online</h2>
 
         </Card>
         </Col>
         <Col flex={'25%'}>
-        <Card className="col-12"  style={{borderRadius:"23px",backgroundImage:"radial-gradient(cornsilk 48px, yellow)"}}>
-        <FontAwesomeIcon icon={faLongArrowAltUp} style={{margin:'auto',width:"22px",height:"auto"}}/>
+        <Card className="col-12"  style={{borderRadius:"23px",backgroundColor:"white",boxShadow:"0 4px 11px 0 #e4e4e4"}}>
+        <FontAwesomeIcon icon={faLongArrowAltUp} style={{color:"cadetblue", margin:'auto',width:"22px",height:"auto"}}/>
         <h2>20% growth</h2>
         </Card>
         </Col>
         <Col flex={'25%'}>
-        <Card className="col-12"  style={{borderRadius:"23px",backgroundImage:"radial-gradient(white -50px ,blueviolet)"}}>
-        <FontAwesomeIcon icon={faDesktop} style={{margin:'auto',width:"54px",height:"auto"}}/>
+        <Card className="col-12"  style={{borderRadius:"23px",backgroundColor:"white",boxShadow:"0 4px 11px 0 #e4e4e4"}}>
+        <FontAwesomeIcon icon={faDesktop} style={{color:'cadetblue',margin:'auto',width:"54px",height:"auto"}}/>
         <h2>3000 visits</h2>
         </Card>
         
         </Col>
         <Col flex={'25%'}>
-        <Card className="col-12"  style={{borderRadius:"23px",backgroundImage:"radial-gradient(cornsilk 48px, yellow)"}}>
-        <FontAwesomeIcon icon={faLongArrowAltUp} style={{margin:'auto',width:"22px",height:"auto"}}/>
+        <Card className="col-12"  style={{borderRadius:"23px",backgroundColor:"white",boxShadow:"0 4px 11px 0 #e4e4e4"}}>
+        <FontAwesomeIcon icon={faLongArrowAltUp} style={{color:"cadetblue",margin:'auto',width:"22px",height:"auto"}}/>
         <h2>20% growth</h2>
         </Card>
         </Col>
@@ -71,7 +74,7 @@ function Dashboard() {
         <div >
         <Row>
           <Col flex={'auto'}>
-        <div style={{margin:"10px"}}>
+        <div style={{margin:"10px",boxShadow:"0 4px 11px 0 #e4e4e4"}}>
 
          
         <Paper>
@@ -93,7 +96,7 @@ function Dashboard() {
         </div>
         </Col>
         <Col flex={'auto'}>
-        <div style={{margin:"10px"}}>
+        <div style={{margin:"10px",boxShadow:"0 4px 11px 0 #e4e4e4"}}>
           
         <Paper>
         <Chart

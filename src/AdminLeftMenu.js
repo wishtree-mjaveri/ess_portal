@@ -1,47 +1,43 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
-import { Button, Layout, Menu, Tooltip } from "antd";
-import {
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-  UnorderedListOutlined,
-  HomeOutlined,
-} from "@ant-design/icons";
+import { useTranslation } from "react-i18next/dist/es/useTranslation";
+// import {  Layout, Menu, Tooltip } from "antd";
+import Layout from "antd/es/layout/index";
+import Menu from "antd/es/menu/index";
+import Tooltip from "antd/es/tooltip/index";
 import { Link, Route, Switch } from "react-router-dom";
-import Home from "./Home";
-import Tasks from "./Tasks";
-import EmployeeDIrectory from "./EmployeeDIrectory";
-import DocumentUploads from "./DocumentUploads";
-import Logout from "./Logout";
-import logo from "./esslogo.png";
-import { AiOutlineLogout } from "react-icons/ai";
+
+import logo from "./esslogo.png"
+import { AiOutlineLogout } from "@react-icons/all-files/ai/AiOutlineLogout";
 import PageNotFound from "./PageNotFound";
 import {
   faChartBar,
-  faEdit,
-  faFileUpload,
-  faHome,
+
   faTasks,
-  faUser,
-  faUserAlt,
-  faUserEdit,
-  faUsers,
+ 
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import EmployeeInfo from "./EmployeeInfo";
-import EditEmployee from "./EditEmployee";
+
 import EmployeeTable from "./EmployeeTable";
 import Dashboard from "./Dashboard";
+// const LazyDashBoard = React.lazy(()=>import('./Dashboard'))
+// const LazyEmployeeTable = React.lazy(()=>import('./EmployeeTable'))
+// const LazyHome = React.lazy(()=>import('./Home'))
+// const LazyTasks = React.lazy(()=>import('./Tasks'))
+// const LazyEmployeeDirectorry = React.lazy(()=>import('./EmployeeDIrectory'))
+// const LazyDocumentUploads = React.lazy(()=>import('./DocumentUploads'))
+// const LazyPageNotFound = React.lazy(()=>import('./PageNotFound'))
+// const LazyEmployeeInfo = React.lazy(()=>import('./EmployeeInfo'))
+// const LazyEditEmployee = React.lazy(()=>import('./EditEmployee'))
+
 const { Header, Content, Footer, Sider } = Layout;
 function AdminLeftMenu(props) {
   const { t } = useTranslation();
 
-//   const user = localStorage.getItem("existusername");
-//   if (user == null) {
-//     // message.error('Please login')
-//     props.history.push("/sign-in");
-//   }
+  //   const user = localStorage.getItem("existusername");
+  //   if (user == null) {
+  //     // message.error('Please login')
+  //     props.history.push("/sign-in");
+  //   }
   const handleLogOut = () => {
     localStorage.removeItem("user");
     localStorage.removeItem("existusername");
@@ -135,7 +131,7 @@ function AdminLeftMenu(props) {
               }
             >
               {/* <Menu.Item key="2" icon={<UnorderedListOutlined  style={{color:"black"}} />}> */}
-              {/* <Tooltip title={t("Tasks")}>
+            {/* <Tooltip title={t("Tasks")}>
                 <Link to={"/menu/tasks"} style={{ color: "black" }}>
                   {t("Tasks")}
                 </Link>
@@ -155,7 +151,7 @@ function AdminLeftMenu(props) {
                   {t("Upload_document")}
                 </Link>
               </Tooltip>
-            </Menu.Item> */} 
+            </Menu.Item> */}
             {/* <Menu.Item
               key="4"
               icon={
@@ -184,7 +180,10 @@ function AdminLeftMenu(props) {
             >
               {/* <Menu.Item key="2" icon={<UnorderedListOutlined  style={{color:"black"}} />}> */}
               <Tooltip title={"Employees"}>
-                <Link to={"/admin/menu/employees"} style={{ color: "black" }}>
+                <Link
+                  to={"/admin/menu/employees"}
+                  style={{ color: "black", fontSize: "16px" }}
+                >
                   Employees
                 </Link>
               </Tooltip>
@@ -197,8 +196,11 @@ function AdminLeftMenu(props) {
             >
               {/* <Menu.Item key="2" icon={<UnorderedListOutlined  style={{color:"black"}} />}> */}
               <Tooltip title={"Dashboard"}>
-                <Link to={"/admin/menu/dashboard"} style={{ color: "black" }}>
-                 Dashboard
+                <Link
+                  to={"/admin/menu/dashboard"}
+                  style={{ color: "black", fontSize: "16px" }}
+                >
+                  Dashboard
                 </Link>
               </Tooltip>
             </Menu.Item>
@@ -253,14 +255,20 @@ function AdminLeftMenu(props) {
                 position: "relative",
                 background: "cadetblue",
                 color: "white",
-                overflow:"hidden",
-                textOverflow:"ellipsis",
-                whiteSpace:"nowrap"
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                whiteSpace: "nowrap",
               }}
             >
-              <h1 style={{ fontWeight: 500, color: "white", fontSize: "50px" ,  overflow:"hidden",
-                textOverflow:"ellipsis",
-                whiteSpace:"nowrap"}}>
+              <h1
+                style={{
+                  color: "white",
+                  fontSize: "40px",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                }}
+              >
                 ESS Portal
               </h1>
 
@@ -306,10 +314,9 @@ function AdminLeftMenu(props) {
               background: "cadetblue",
               padding: "15px",
               color: "white",
-              whiteSpace:"nowrap",
-              overflow:"hidden",
-              textOverflow:"ellipsis"
-
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
             }}
           >
             {" "}

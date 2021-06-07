@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import {useTranslation} from 'react-i18next'
+import {useTranslation} from 'react-i18next/dist/es/useTranslation'
 
 function CreateTask({addTask}) {
     const [value, setValue] = useState("");

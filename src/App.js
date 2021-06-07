@@ -1,35 +1,28 @@
-import logo from './logo.svg';
+
 import './App.css';
+import React from 'react'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
+
 import Signup from './Signup';
 import Signin from './Signin';
 import Leftmenu from './Leftmenu';
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
-import Home from './Home';
-import Tasks from './Tasks';
-import EmployeeDIrectory from './EmployeeDIrectory';
+
 import Logout from './Logout';
 import PageNotFound from './PageNotFound';
 import AdminLeftMenu from './AdminLeftMenu';
-import {useMediaQuery} from 'react-responsive'
+
+// const LazySignUp =React.lazy(()=>import('./Signup'))
+// const LazySignin =React.lazy(()=>import('./Signin'))
+// const LazyLeftmenu =React.lazy(()=>import('./Leftmenu'))
+// const LazyLogout =React.lazy(()=>import('./Logout'))
+// const LazyPageNotFound =React.lazy(()=>import('./PageNotFound'))
+// const LazyAdminLeftMenu =React.lazy(()=>import('./AdminLeftMenu'))
+
+
 
 
 function App() {
-  const Desktop = ({ children }) => {
-    const isDesktop = useMediaQuery({ minWidth: 992 })
-    return isDesktop ? children : null
-  }
-  const Tablet = ({ children }) => {
-    const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 })
-    return isTablet ? children : null
-  }
-  const Mobile = ({ children }) => {
-    const isMobile = useMediaQuery({ maxWidth: 767 })
-    return isMobile ? children : null
-  }
-  const Default = ({ children }) => {
-    const isNotMobile = useMediaQuery({ minWidth: 768 })
-    return isNotMobile ? children : null
-  }
+  
   return (
     <div className="App">
       <BrowserRouter>
@@ -39,10 +32,10 @@ function App() {
    {/* <Leftmenu/> */}
    {/* <Logout /> */}
    {/* <EmployeeDIrectory /> */}
+   {/* <React.Suspense fallback={'loading...'} > */}
   
     <Switch>
     {/*  */}
-  
   <Route path={"/"} exact component={Signin} />
 <Route path={"/sign-in"} exact component={Signin} />
 <Route path={"/signup"} component={Signup}/>
@@ -54,7 +47,8 @@ function App() {
 <Route component={PageNotFound}/>
 
 </Switch>
-   
+{/* </React.Suspense> */}
+ 
    
   
    </BrowserRouter>

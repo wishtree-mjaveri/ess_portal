@@ -1,11 +1,18 @@
 import React, { useState } from "react";
-import { Form, Button, Input, Card, message } from "antd";
-import { LockOutlined, UserOutlined } from "@ant-design/icons";
+// import { Form, Button, Input, Card, message } from "antd";
+import Button from 'antd/es/button/index'
+import Card from 'antd/es/card/index'
+import Form from 'antd/es/form/index'
+import Input from 'antd/es/input/index'
+import  message  from "antd/es/message/index";
+import  LockOutlined  from "@ant-design/icons/LockOutlined";
+import   UserOutlined  from "@ant-design/icons/UserOutlined";
+
 import { Link } from "react-router-dom";
 import GoogleLogin from "./GoogleLogin";
 import image from "./undraw_Team_page_re_cffb (1).svg";
 import logo from './esslogo.png'
-import {useTranslation} from 'react-i18next'
+import {useTranslation} from 'react-i18next/dist/es/useTranslation'
 function Signin(props) {
   const FormItem = Form.Item;
   const [email, setEmail] = useState("");
@@ -44,14 +51,18 @@ function Signin(props) {
       //   message.error('No user exist with this email.Please create account.')
       // }
      
+     if (userObj) {
       if (userObj.email.length>0) {
-      console.log(userObj.username)
-props.history.push('/menu/home',{username:userObj.username})
-        // props.history.push('/menu',{username:userObj.username})
-      }  
-       else{
+        console.log(userObj.username)
+  props.history.push('/menu/home',{username:userObj.username})
+          // props.history.push('/menu',{username:userObj.username})
+        }  
+     } else {
         message.error('No user exist with this email.Please create account.')
-      }
+       
+     }
+     
+     
       console.log(email);
       
     }

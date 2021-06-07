@@ -1,15 +1,22 @@
 import React, { useState } from "react";
 import {useTranslation} from 'react-i18next'
 import LanguageSelect from './LanguageSelect'
-import { Button, Card, Checkbox, Form, Input, Modal, message } from "antd";
-import {
-  UserOutlined,
-  LockOutlined,
-  GoogleCircleFilled,
-} from "@ant-design/icons";
-import axios from "axios";
+// import { Button, Card, Form, Input,  message } from "antd";
+// import {
+//   UserOutlined,
+//   LockOutlined,
+
+// } from "@ant-design/icons";
+import Button from 'antd/es/button/index'
+import Card from 'antd/es/card/index'
+import Form from 'antd/es/form/index'
+import Input from 'antd/es/input/index'
+import  message  from "antd/es/message/index";
+import LockOutlined  from "@ant-design/icons/LockOutlined";
+import   UserOutlined  from "@ant-design/icons/UserOutlined";
+
 import { Link } from "react-router-dom";
-import Signin from "./Signin";
+
 import GoogleLogin from "./GoogleLogin";
 import Image from "./undraw_Team_page_re_cffb (1).svg";
 import logo from './esslogo.png'
